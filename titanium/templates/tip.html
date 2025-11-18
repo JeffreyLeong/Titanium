@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Tip Calculator</h1>
+    <form>
+        <label for="bill">Total Bill:</label>
+        <input type="number" id="bill">
+        <label for="tip">Tip %:</label>
+        <input type="number" id="tip">
+        <button id="calculate">Calculate</button>
+    </form>
+    <div class="results-box">
+        <h2>Your Total</h2>
+        <p id="total-display">$0.00</p>
+    </div>
+
+    <script src="{{ url_for('static', filename='tip_calculator/tip.js') }}"></script>
+
+{% endblock %}
+
+
+
