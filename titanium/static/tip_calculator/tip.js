@@ -3,6 +3,8 @@ const billInput = document.getElementById("bill");
 const tipInput = document.getElementById("tip");
 const calculateBtn = document.getElementById("calculate");
 const totalDisplay = document.getElementById("total-display");
+const tipAmountDisplay = document.getElementById("tip-amount");
+const totalAmountDisplay = document.getElementById("total-amount");
 
 // 2. When user clicks the Calculate button:
 calculateBtn.addEventListener("click", function(event) {
@@ -27,5 +29,7 @@ calculateBtn.addEventListener("click", function(event) {
 
     // 7. Update the page with the result (2 decimal places)
     totalDisplay.textContent = `$${total.toFixed(2)}`;
+    tipAmountDisplay.textContent = `$${tipAmount.toFixed(2)}`;
+    totalAmountDisplay.textContent = `$${total.toFixed(2)}`
 
 });

@@ -15,10 +15,44 @@ a {
 }
 a:hover { background: #0a58ca; }
 
-.results-box{
-  display: grid;
-  place-items: center;
-  height: 200px;
-  border: 3px solid green;
+.the-card {
+  width: 350px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: white; 
+  margin: 0 auto;
+}
 
+.bill-input {
+  margin-bottom: 20px;
+}
+
+.tip-input {
+  margin-bottom: 20px;
+}
+
+.button-row {
+  margin-bottom: 20px;
+}
+
+.total-display {
+  margin-bottom: 20px;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result-row label{
+  width: 70px;
+  display: inline-block;
+  text-align: left;
+}
+
+.result-row p{
+  margin: 0;
+  text-align: right;
 }

@@ -1,16 +1,33 @@
 {% extends 'base.html' %}
 {% block content %}
     <h1>Tip Calculator</h1>
+    <div class="the-card">
     <form>
+        <div class="bill-input">
         <label for="bill">Total Bill:</label>
         <input type="number" id="bill">
+        </div>
+
+        <div class="tip-input">
         <label for="tip">Tip %:</label>
         <input type="number" id="tip">
+        </div>
+
+        <div class="button-row">
         <button id="calculate">Calculate</button>
+        </div>
+
+        <div class="total-display">
+            <div class="result-row">
+                <label>Total Tip:</label>
+                <p id="tip-amount">$0.00</p>
+            </div>
+            <div class="result-row">
+                <label>Total Bill:</label>
+                <p id="total-amount">$0.00</p>
+            </div>       
+        </div>
     </form>
-    <div class="results-box">
-        <h2>Your Total</h2>
-        <p id="total-display">$0.00</p>
     </div>
 
     <script src="{{ url_for('static', filename='tip_calculator/tip.js') }}"></script>

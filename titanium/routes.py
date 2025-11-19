@@ -7,5 +7,5 @@ def home():
     return render_template('home.html', title="Titanium Home")
 
 @bp.route('/tip')
-def tim_calculator():
+def tip_calculator():
     return render_template('tip.html', title="Tip Calculator")
