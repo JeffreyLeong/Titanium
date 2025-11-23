@@ -26,3 +26,5 @@ Thumbs.db
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+
+*_accessKeys.csv

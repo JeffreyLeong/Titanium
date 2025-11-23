@@ -1,6 +1,6 @@
 branch-defaults:
   main:
-    environment: Titanium-Site-dev
+    environment: Titanium-Site-env-2
     group_suffix: null
 global:
   application_name: Titanium-Site
