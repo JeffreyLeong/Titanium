@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Maintenance History</h2>
+
+<table border="1" cellpadding="10" style="margin:auto; border-collapse: collapse;">
+    <tr>
+        <th>Date</th>
+        <th>Mileage</th>
+        <th>Service</th>
+        <th>Cost</th>
+        <th>Notes</th>
+    </tr>
+
+    {% for r in records %}
+    <tr>
+        <td>{{ r.date }}</td>
+        <td>{{ r.mileage }}</td>
+        <td>{{ r.service }}</td>
+        <td>{{ "$" ~ "%.2f"|format(r.cost) if r.cost else "-" }}</td>
+        <td>{{ r.notes if r.notes else "-" }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
