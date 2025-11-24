@@ -11,3 +11,4 @@ Jinja2==3.1.2
 WTForms==3.2.1
 SQLAlchemy==2.0.22
 requests==2.32.5
+Flask-Talisman==1.0.0
