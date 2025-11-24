@@ -9,6 +9,7 @@ __pycache__/
 # Virtual environment
 venv/
 env/
+venv311/
 
 # Environment files (secrets)
 .flaskenv
@@ -28,3 +29,5 @@ Thumbs.db
 !.elasticbeanstalk/*.global.yml
 
 *_accessKeys.csv
+
+logs.txt
