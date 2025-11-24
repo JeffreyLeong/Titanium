@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{ title or "Titanium" }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">Home</a>
+    </nav>
+
+    {% block content %}{% endblock %}
+
+    {% block scripts %}{% endblock %}
+</body>
+</html>
