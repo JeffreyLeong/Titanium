@@ -7,4 +7,3 @@ Werkzeug==2.3.8
 itsdangerous==2.1.2
 Jinja2==3.1.2
 click==8.1.6
-# Add any other packages from car_maintenance that you explicitly use
