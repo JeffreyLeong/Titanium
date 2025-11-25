@@ -1,12 +1,3 @@
-# titanium_site/app.py
-
-from flask import Flask, render_template
-from flask_sqlalchemy import SQLAlchemy
-from flask_talisman import Talisman
-import os
-
-db = SQLAlchemy()
-
 def create_app():
     # Create Flask app with correct template/static folders
     app = Flask(
@@ -32,6 +23,14 @@ def create_app():
 
     # Initialize SQLAlchemy
     db.init_app(app)
+
+    # --- Health check before_request ---
+    from flask import request
+    @app.before_request
+    def skip_redirect_for_healthcheck():
+        if request.path == "/" and "ELB-HealthChecker" in request.headers.get("User-Agent", ""):
+            return "OK", 200
+    # ----------------------------------
 
     # Import and register blueprints
     from .tip_calculator.routes import tip_bp
