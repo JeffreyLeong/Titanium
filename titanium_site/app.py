@@ -1,4 +1,8 @@
-from flask import Flask
+from flask import Flask, request, render_template
+import os
+from werkzeug.middleware.proxy_fix import ProxyFix
+from flask_talisman import Talisman
+from .extensions import db  # Assuming you have SQLAlchemy initialized here
 
 def create_app():
     # Create Flask app with correct template/static folders
@@ -7,6 +11,9 @@ def create_app():
         template_folder="core/templates",
         static_folder="core/static"
     )
+
+    # Fix for proxies/load balancers (prevents 302 redirect)
+    app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
 
     # Enforce HTTPS with Talisman
     Talisman(app, force_https=True)
@@ -27,7 +34,6 @@ def create_app():
     db.init_app(app)
 
     # --- Health check before_request ---
-    from flask import request
     @app.before_request
     def skip_redirect_for_healthcheck():
         if request.path == "/" and "ELB-HealthChecker" in request.headers.get("User-Agent", ""):
