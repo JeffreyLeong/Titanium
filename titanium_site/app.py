@@ -22,7 +22,7 @@ def create_app():
     app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY", "dev_key")
 
     # SQLite configuration
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///car_maintenance.db'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///instance/car_maintenance.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
     # Initialize DB with app
@@ -38,6 +38,11 @@ def create_app():
     @app.route("/")
     def index():
         return render_template("home.html", title="Home")
+    
+    # Make sure instance folder exists
+    import os
+    instance_path = os.path.join(app.root_path, 'instance')
+    os.makedirs(instance_path, exist_ok=True)
 
     # Create database tables
     with app.app_context():
