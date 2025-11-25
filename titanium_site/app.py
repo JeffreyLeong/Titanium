@@ -1,3 +1,5 @@
+from flask import Flask
+
 def create_app():
     # Create Flask app with correct template/static folders
     app = Flask(
