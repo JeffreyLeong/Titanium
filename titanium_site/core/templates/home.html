@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>Welcome to Titanium</h1>
+  <p>Select a mini-site:</p>
+
+  <div class="menu">
+    <a href="{{ url_for('tip.tip_home') }}">Tip Calculator</a>
+    <a href="#">Finance Tracker</a>
+    <a href="{{ url_for('car.car_home') }}">Car Maintenance</a>
+    <a href="#">Dog Shots</a>
+  </div>
+{% endblock %}
